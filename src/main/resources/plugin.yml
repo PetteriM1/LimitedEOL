@@ -1,0 +1,8 @@
+name: LimitedEOL
+version: "${pom.version}"
+api: ["1.0.0"]
+author: PetteriM1
+main: me.petterim1.limitedeol.Plugin
+permissions:
+  eol.bypass:
+    default: op

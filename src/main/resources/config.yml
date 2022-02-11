@@ -1,0 +1,4 @@
+# minimum protocol version for players without eol.bypass permission
+minProtocol: 419
+# outdated client kick message
+outdatedGame: ""
