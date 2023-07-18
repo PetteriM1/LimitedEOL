@@ -1,8 +1,9 @@
 package me.petterim1.limitedeol;
 
 import cn.nukkit.event.EventHandler;
+import cn.nukkit.event.EventPriority;
 import cn.nukkit.event.Listener;
-import cn.nukkit.event.player.*;
+import cn.nukkit.event.player.PlayerLoginEvent;
 import cn.nukkit.plugin.PluginBase;
 
 public class Plugin extends PluginBase implements Listener {
@@ -17,8 +18,8 @@ public class Plugin extends PluginBase implements Listener {
         getServer().getPluginManager().registerEvents(this, this);
     }
 
-    @EventHandler
-    public void onPreLogin(PlayerPreLoginEvent e) {
+    @EventHandler(priority = EventPriority.HIGH)
+    public void onPreLogin(PlayerLoginEvent e) {
         if (e.getPlayer().protocol < minProtocol && !e.getPlayer().hasPermission("eol.bypass")) {
             e.setKickMessage(outdatedGame);
             e.setCancelled(true);
